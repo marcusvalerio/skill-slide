@@ -1,28 +1,25 @@
 ---
 name: aulas-logistica-senai
-description: Gera os slides de aula (PPTX) no estilo SENAI a partir do PER (plano de ensino) enviado pelo usuário: uma apresentação por UC, aulas de 4 horas.
+description: Gera os slides de aula (PPTX) no estilo SENAI a partir do plano de aula enviado pelo usuário: uma apresentação por UC, seguindo as aulas do plano.
 ---
 
-# Aulas em PPTX no estilo SENAI a partir do PER
+# Aulas em PPTX no estilo SENAI a partir do plano de aula
 
-Fluxo de uso: a pessoa carrega esta skill e depois envia o PER (plano de ensino ou documento de referência do curso, em PDF, DOCX ou texto). A skill lê o PER, identifica as Unidades Curriculares e gera um .pptx por UC, com aulas de 4 horas no estilo visual SENAI (capa e aberturas em azul-marinho, conteúdo em fundo off-white, títulos em Georgia).
+Fluxo de uso: a pessoa carrega esta skill e depois envia o **plano de aula** da UC (Word, PDF, Excel ou texto). A skill lê o plano e gera um .pptx por UC, com uma sequência de slides para cada aula do plano, no estilo visual SENAI (capa e aberturas em azul-marinho, conteúdo em fundo off-white, títulos em Georgia).
 
-## 1. Ler o PER
+## 1. Ler o plano de aula
 
-Extraia o texto do arquivo (pdftotext, python-docx ou leitura direta). Para cada UC, anote:
+Extraia o texto do arquivo (python-docx, pdftotext, openpyxl ou leitura direta). Anote:
 
-- número e nome da UC
-- carga horária (número de aulas = carga horária ÷ 4)
-- objetivo da UC
-- capacidades / competências
-- conhecimentos (os tópicos de conteúdo)
-- nome do curso, se constar
+- curso, UC (número e nome), carga horária e instrutor
+- capacidades e conhecimentos da UC
+- para cada aula do plano: número, data, conhecimentos trabalhados, estratégias/atividades, recursos e avaliação
 
-Mostre ao usuário, em poucas linhas, a lista de UCs encontradas com carga horária e número de aulas e pergunte apenas: quais UCs gerar (padrão: todas) e o nome do professor que vai na capa. Se o usuário já disse isso, não pergunte: siga.
+O plano de aula manda: cada aula do plano vira uma aula nos slides, na mesma ordem e com os mesmos conhecimentos. Não invente aulas nem conteúdos fora do plano; use as estratégias e atividades do plano como base da atividade de fixação. Se o plano não trouxer o instrutor, pergunte só o nome que vai na capa. Se o plano tiver mais de uma UC, gere um arquivo por UC.
 
 ## 2. Planejar as aulas
 
-- Distribua os conhecimentos da UC pelas aulas em ordem lógica, do básico ao aplicado. Use as capacidades do PER para escrever os objetivos.
+- Siga a divisão de aulas do plano. Escreva os objetivos de cada aula a partir das capacidades e conhecimentos que o plano associa a ela.
 - Toda aula tem 4 horas, nesta estrutura (o roteiro da abertura lista as etapas, sem horários):
   1. Abertura e revisão
   2. Bloco 1 de conteúdo (5 ou 6 slides)
@@ -31,7 +28,7 @@ Mostre ao usuário, em poucas linhas, a lista de UCs encontradas com carga horá
   5. Última hora: atividade de fixação (em grupo ou individual) + questões de fixação + síntese
 - Cada aula tem de 10 a 12 slides de conteúdo, variando os tipos. Não repita o mesmo tipo em sequência.
 - Use "pergunta" (pergunta para a turma) em pelo menos 3 slides por aula e "atencao" quando houver alerta de segurança, norma ou erro comum.
-- A atividade de fixação de cada aula é de fixação do conteúdo do dia: em grupo ("modo": "grupo") ou individual ("modo": "individual"). Quando houver cálculo, classificação ou preenchimento, inclua uma "tabela" para os alunos completarem.
+- A atividade de fixação de cada aula é de fixação do conteúdo do dia, coerente com a estratégia prevista no plano: em grupo ("modo": "grupo") ou individual ("modo": "individual"). Quando houver cálculo, classificação ou preenchimento, inclua uma "tabela" para os alunos completarem.
 - A última aula de cada UC fecha com uma atividade que revisa a UC inteira.
 - Se uma UC for de integração/projeto, use um caso único que avança uma etapa por aula.
 

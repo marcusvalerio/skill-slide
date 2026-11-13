@@ -1,12 +1,12 @@
 # aulas-logistica-senai
 
-Skill para o Claude que gera os slides das aulas (PPTX) no estilo SENAI a partir do PER do curso.
+Skill para o Claude que gera os slides das aulas (PPTX) no estilo SENAI a partir do plano de aula.
 
 ## Como usar
 
 1. Carregue esta skill (pasta `aulas-logistica-senai`) no Claude, por exemplo em `.claude/skills/` do projeto.
-2. Envie o PER (PDF, DOCX ou texto).
-3. O Claude lista as UCs encontradas, confirma o nome do professor e gera um .pptx por UC, com aulas de 4 horas.
+2. Envie o plano de aula (Word, PDF, Excel ou texto).
+3. O Claude segue as aulas do plano e gera um .pptx por UC.
 
 ## Arquivos
 
