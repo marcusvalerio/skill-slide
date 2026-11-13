@@ -4,7 +4,7 @@ const fs = require('fs');
 const { applyTheme } = require(process.env.APPLY_THEME);
 
 const THEME = {
-  name: 'Aulas Logistica', headFontFace: 'Georgia', bodyFontFace: 'Calibri',
+  name: 'Aulas SENAI', headFontFace: 'Georgia', bodyFontFace: 'Calibri',
   colors: { dk1: '1B2333', lt1: 'FFFFFF', dk2: '0B2D5B', lt2: 'F7F7F4', accent1: '2563C9', accent2: 'B45309',
     accent3: '4F8BEA', accent4: '9FC1F5', accent5: 'E7EEF9', accent6: '5E6675', hlink: '2563C9', folHlink: '0B2D5B' }
 };
@@ -13,7 +13,7 @@ const HX = { line: 'D9DCE2', zebra: 'F1F2F4', warnBg: 'FDF3E3', lightBlue: 'E7EE
 async function main() {
   const [, , dataFile, outFile] = process.argv;
   const D = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
-  const CURSO = D.curso || 'Assistente de Operações em Logística';
+  const CURSO = D.curso || 'Curso';
   const PROF = D.professor || 'Marcus Valério';
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
