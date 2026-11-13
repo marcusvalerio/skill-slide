@@ -15,6 +15,16 @@ Extraia o texto do arquivo (python-docx, pdftotext, openpyxl ou leitura direta).
 - capacidades e conhecimentos da UC
 - para cada aula do plano: número, data, conhecimentos trabalhados, estratégias/atividades, recursos e avaliação
 
+### Plano gerado pelo GeraMaterial
+
+O plano de aula do GeraMaterial já vem estruturado. No Word, use os estilos de título como mapa (`pandoc plano.docx -t markdown` mostra tudo); no PDF, siga os mesmos textos:
+
+- Título: "Unidade Curricular: <nome>", seguido da tabela de identificação (Curso, Carga horária total, Organização, Instrutor(a), Referência metodológica).
+- Título 1, seções numeradas: "1. Objetivo geral", "2. Distribuição da carga horária" (tabela grupos × horas), "3. Plano de aula detalhado: N encontros", depois organização diária, instrumentos de avaliação, recursos e resultado esperado.
+- Título 2, um por encontro: "Dia 01 – <título da aula>", com uma linha de carga horária/data e uma tabela de rótulos fixos: **Conhecimentos**, **Objetivo**, **Estratégia MSEP**, **Atividade**, **Avaliação**.
+
+Cada "Dia NN" vira uma aula: o título da aula vem do Título 2, os conteúdos de "Conhecimentos", os objetivos de "Objetivo", a dinâmica de "Estratégia MSEP" e a atividade de fixação de "Atividade" (com "Avaliação" como critério). O instrutor vem da tabela de identificação.
+
 O plano de aula manda: cada aula do plano vira uma aula nos slides, na mesma ordem e com os mesmos conhecimentos. Não invente aulas nem conteúdos fora do plano; use as estratégias e atividades do plano como base da atividade de fixação. Se o plano não trouxer o instrutor, pergunte só o nome que vai na capa. Se o plano tiver mais de uma UC, gere um arquivo por UC.
 
 ## 2. Planejar as aulas
