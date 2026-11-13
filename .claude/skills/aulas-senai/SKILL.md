@@ -1,11 +1,11 @@
 ---
-name: aulas-logistica-senai
-description: Gera os slides de aula (PPTX) no estilo SENAI a partir do plano de aula enviado pelo usuário: uma apresentação por UC, seguindo as aulas do plano.
+name: aulas-senai
+description: Gera os slides de aula (PPTX) no estilo SENAI a partir do plano de aula enviado pelo professor, para qualquer curso ou disciplina (logística, mecânica, elétrica, TI, gestão, segurança do trabalho etc.): uma apresentação por UC, seguindo as aulas do plano.
 ---
 
 # Aulas em PPTX no estilo SENAI a partir do plano de aula
 
-Fluxo de uso: a pessoa carrega esta skill e depois envia o **plano de aula** da UC (Word, PDF, Excel ou texto). A skill lê o plano e gera um .pptx por UC, com uma sequência de slides para cada aula do plano, no estilo visual SENAI (capa e aberturas em azul-marinho, conteúdo em fundo off-white, títulos em Georgia).
+Fluxo de uso: a pessoa carrega esta skill e depois envia o **plano de aula** da UC (Word, PDF, Excel ou texto). Serve para qualquer curso ou área: o curso, a UC e todo o conteúdo vêm do plano. A skill lê o plano e gera um .pptx por UC, com uma sequência de slides para cada aula do plano, no estilo visual SENAI (capa e aberturas em azul-marinho, conteúdo em fundo off-white, títulos em Georgia).
 
 ## 1. Ler o plano de aula
 
@@ -28,6 +28,9 @@ Cada "Dia NN" vira uma aula: o título da aula vem do Título 2, os conteúdos d
 O plano de aula manda: cada aula do plano vira uma aula nos slides, na mesma ordem e com os mesmos conhecimentos. Não invente aulas nem conteúdos fora do plano; use as estratégias e atividades do plano como base da atividade de fixação. Se o plano não trouxer o instrutor, pergunte só o nome que vai na capa. Se o plano tiver mais de uma UC, gere um arquivo por UC.
 
 ## 2. Planejar as aulas
+
+- Adapte linguagem, exemplos e atividades à área do curso: situações reais da profissão daquela disciplina (oficina, laboratório, canteiro, escritório, chão de fábrica, atendimento etc.), termos técnicos e normas da área (NRs, ABNT, legislação) quando o plano trouxer. Os exemplos desta skill são de logística só para ilustrar o formato.
+- Em cálculo, código, circuito ou procedimento técnico, prefira slides de "processo", "exemplo" e "atividade" com tabela para resolver.
 
 - Siga a divisão de aulas do plano. Escreva os objetivos de cada aula a partir das capacidades e conhecimentos que o plano associa a ela.
 - Toda aula tem 4 horas, nesta estrutura (o roteiro da abertura lista as etapas, sem horários):
@@ -70,7 +73,7 @@ Campos opcionais em qualquer slide de conteúdo: "bloco" (1 ou 2), "pergunta" (a
 ```json
 {
   "uc": 3, "nome": "Logística de Armazenagem", "horas": 60,
-  "curso": "Assistente de Operações em Logística", "professor": "Nome do Professor",
+  "curso": "Nome do curso (do plano)", "professor": "Nome do Professor",
   "objetivo": "Uma frase sobre o que a UC desenvolve.",
   "aulas": [
     {
